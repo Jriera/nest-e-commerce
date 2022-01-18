@@ -7,8 +7,8 @@ export class CreateOrderDto{
     @PrimaryGeneratedColumn()
     id?: number;
 
-    @IsNumber()
-    userId: number;
+    @IsString()
+    userId: string;
 
     @IsString()
     orderDate: string;

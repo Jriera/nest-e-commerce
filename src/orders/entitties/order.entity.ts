@@ -8,7 +8,7 @@ export class Order {
     id: number;
 
     @Column()
-    userId: number;
+    userId: string;
 
     @Column()
     orderDate: string;

@@ -19,7 +19,7 @@ export class Order {
     @Column()
     totalPrice: number;
 
-    @Column()
+    @Column({ type: 'json' })
     cart: OrderItemDto[];
 
 }

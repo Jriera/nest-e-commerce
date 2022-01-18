@@ -19,6 +19,6 @@ export class CreateOrderDto{
     @IsNumber()
     totalPrice: number;
 
-    @ValidateNested({ each: true })
+   
     cart: OrderItemDto[];
 }

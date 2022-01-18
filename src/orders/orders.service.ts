@@ -26,9 +26,9 @@ export class OrdersService {
         }
     }
 
-    create(createUserDto: CreateOrderDto) {
-        const user = this.orderRepository.create(createUserDto);
-        return this.orderRepository.save(user);
+    create(createOrderDto: CreateOrderDto) {
+        const order = this.orderRepository.create(createOrderDto);
+        return this.orderRepository.save(order);
 
     }
 

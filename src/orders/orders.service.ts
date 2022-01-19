@@ -26,6 +26,14 @@ export class OrdersService {
         }
     }
 
+    findByUserId(userId: string) {
+        return this.orderRepository.find({
+            where: {
+                userId: userId,
+            },
+        });
+    }
+
     create(createOrderDto: CreateOrderDto) {
         const order = this.orderRepository.create(createOrderDto);
         return this.orderRepository.save(order);

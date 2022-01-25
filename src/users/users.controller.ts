@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post, Query } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { UsersService } from './users.service';
@@ -15,6 +15,11 @@ export class UsersController {
     @Get(':id')
     findOne(@Param('id') id: string) {
         return this.usersService.findOne(id);
+    }
+
+    @Get('by-uid')
+    findByUserId(@Query('uid') uid: string) {
+        return this.usersService.findByUserId(uid);
     }
 
     @Post()

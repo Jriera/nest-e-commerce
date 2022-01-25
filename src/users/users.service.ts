@@ -26,6 +26,14 @@ export class UsersService {
         }
     }
 
+    findByUserId(uid: string) {
+        return this.userRepository.find({
+            where: {
+                uid: uid,
+            },
+        });
+    }
+
     create(createUserDto: CreateUserDto) {
         const user = this.userRepository.create(createUserDto);
         return this.userRepository.save(user);
